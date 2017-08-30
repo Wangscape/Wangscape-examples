@@ -1,0 +1,49 @@
+version: 1.0.{build}
+init:
+- ps: $env:Path = "C:\Python36;C:\Python36\Scripts;"+$env:Path
+environment:
+  Examples: squares;gradient-fade;gradient-dither
+install:
+- ps: >-
+    # Use master version of Wangscape
+
+    Start-FileDownload https://ci.appveyor.com/api/buildjobs/769sio1j0kbpgtdh/artifacts/dist%2FWangscape.zip -FileName Wangscape.zip
+
+    7z x Wangscape.zip
+
+    Start-FileDownload http://download.qt.io/development_releases/prebuilt/llvmpipe/windows/opengl32sw-32.7z
+
+    # Use OpenGL Mesa
+
+    7z x opengl32sw-32.7z
+
+    move opengl32sw.dll Wangscape\Wangscape\opengl32.dll
+
+
+    # Use experimental version of Wangview
+
+    git clone -q -b fixed-maps https://github.com/Wangscape/Wangview.git .\Wangview
+
+    pip install -r Wangview\requirements.txt
+
+
+    # Use experimental version of Wangcheck
+
+    Start-FileDownload https://ci.appveyor.com/api/buildjobs/51b6vchlufb9f2iu/artifacts/build%2FWangcheck.zip -FileName Wangcheck.zip
+
+    7z x Wangcheck.zip
+build_script:
+- ps: >-
+    $env:Examples.Split(";") | ForEach {
+        Wangcheck\Wangcheck.exe configurations\$_\options.json Wangscape\doc\schemas
+        Wangscape\Wangscape\Wangscape.exe configurations\$_\options.json -v
+        If (Test-Path configurations\$_\fixed_map.json)
+        {
+            python Wangview\Wangview.py configurations\$_\output -o map-$_.png -m ..\fixed_map.json
+        }
+        Else
+        {
+            python Wangview\Wangview.py configurations\$_\output -o map-$_.png - s 35 35
+        }
+        Push-AppveyorArtifact configurations\$_\output\map-$_.png
+    }

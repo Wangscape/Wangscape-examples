@@ -5,9 +5,9 @@ environment:
   Examples: squares;gradient-fade;gradient-dither;zigzag;jagged;wavy-subtle;wavy-bold
 install:
 - ps: >-
-    # Use master version of Wangscape
+    # Use experimental version of Wangscape (https://github.com/Wangscape/Wangscape/pull/196/commits/c082aa3ae23a6f9da09d498fbfe5dd5eca2f2370)
 
-    Start-FileDownload https://ci.appveyor.com/api/buildjobs/769sio1j0kbpgtdh/artifacts/dist%2FWangscape.zip -FileName Wangscape.zip
+    Start-FileDownload https://ci.appveyor.com/api/buildjobs/ki9w717g9ioojpt4/artifacts/dist%2FWangscape.zip -FileName Wangscape.zip
 
     7z x Wangscape.zip
 

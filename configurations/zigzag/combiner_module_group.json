@@ -1,0 +1,28 @@
+{
+  "defaultoutputmodule":"OUTPUT",
+  "inputmodules":["INPUT_H","INPUT_V","INPUT_C"],
+  "modules":{
+    "INPUT_H":{
+      "type":"Forward",
+      "SourceModule":[]
+    },
+    "INPUT_V":{
+      "type":"Forward",
+      "SourceModule":[]
+    },
+    "INPUT_C":{
+      "type":"Forward",
+      "SourceModule":[]
+    },
+    "zigzag":{
+      "type":"Bitmap",
+      "Filename":"zigzag.png",
+      "Region":[[-1,-1],[2,2]],
+      "DefaultValue":0
+    },
+    "OUTPUT":{
+      "type":"QuadrantSelector",
+      "SourceModule":["zigzag"]
+    }
+  }
+}

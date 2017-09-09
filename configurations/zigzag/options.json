@@ -1,0 +1,93 @@
+{
+  "MetaOutput": {
+    "TileData": "tiles.json",
+    "TileGroups": "tile_groups.json",
+    "TilesetData": "tilesets.json",
+    "TerrainHypergraph": "terrain_hypergraph.json"
+  },
+  "TileFormat": {
+    "Resolution": [64, 64],
+    "FileType": "png"
+  },
+  "OutputDirectory": "output",
+  "Terrains": {
+    "g": {
+      "FullName": "grass",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 192,
+      "OffsetY": 0
+    },
+    "r": {
+      "FullName": "rock",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 256,
+      "OffsetY": 0
+    },
+    "d": {
+      "FullName": "dirt",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 256,
+      "OffsetY": 64
+    },
+    "p": {
+      "FullName": "path",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 192,
+      "OffsetY": 64
+    },
+    "c": {
+      "FullName": "coast",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 128,
+      "OffsetY": 0
+    },
+    "s": {
+      "FullName": "snow",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 128,
+      "OffsetY": 64
+    },
+    "x": {
+      "FullName": "water1",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 64,
+      "OffsetY": 0
+    },
+    "y": {
+      "FullName": "water2",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 0,
+      "OffsetY": 64
+    },
+    "z": {
+      "FullName": "water3",
+      "FileName": "../../base_tiles/KenneyNL/kenney_base_tiles.png",
+      "OffsetX": 64,
+      "OffsetY": 64
+    }
+  },
+  "Cliques": [
+    [
+      "x",
+      "y",
+      "z",
+      "c"
+    ],
+    [
+      "c",
+      "g",
+      "d",
+      "p"
+    ],
+    [
+      "g",
+      "p",
+      "s",
+      "r"
+    ]
+  ],
+  "AlphaCalculatorMode":"Max",
+  "DefaultModuleGroup": "default_module_group.json",
+  "CombinerModuleGroup":"combiner_module_group.json",
+  "DebugOutput":false
+}

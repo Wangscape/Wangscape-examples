@@ -1,0 +1,20 @@
+{
+  "defaultoutputmodule":"OUTPUT",
+  "modules":{
+    "OUTPUT":{
+      "type":"TranslatePoint",
+      "Translation":[1.1,2.2,3.3],
+      "SourceModule":["voronoi_clamped"]
+    },
+    "voronoi_clamped":{
+      "type":"Clamp",
+      "Bounds":[-1,1],
+      "SourceModule":["voronoi"]
+    },
+    "voronoi":{
+      "type":"Voronoi",
+      "Frequency":1.3,
+      "EnableDistance":false
+    }
+  }
+}

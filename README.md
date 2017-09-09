@@ -24,6 +24,10 @@ The options file at `configurations/awesome/options.json` will be built.
 Free AppVeyor accounts allow only 60 minutes before a build is cancelled, so make sure the jobs are not too large.
 Don't put too many terrains in a clique, and don't build too many different configurations.
 
+If you are making a lot of changes and want quick feedback, it may be worth using a reduced options file,
+with just one clique containing two terrains.
+When you're happy with how the tiles are generated, switch back to the full cliques.
+
 If you want the map to be rendered with a specific terrain grid, provide a file named `fixed_map.json` in the same folder as `options.json`.
 It should be formatted like the following:
 ```json

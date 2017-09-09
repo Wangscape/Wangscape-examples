@@ -2,7 +2,7 @@ version: 1.0.{build}
 init:
 - ps: $env:Path = "C:\Python36;C:\Python36\Scripts;"+$env:Path
 environment:
-  Examples: squares;gradient-fade;gradient-dither
+  Examples: squares;gradient-fade;gradient-dither;zigzag;jagged;wavy-subtle;wavy-bold
 install:
 - ps: >-
     # Use master version of Wangscape

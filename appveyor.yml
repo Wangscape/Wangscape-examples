@@ -43,7 +43,7 @@ build_script:
         }
         Else
         {
-            python Wangview\Wangview.py configurations\$_\output -o map-$_.png - s 35 35
+            python Wangview\Wangview.py configurations\$_\output -o map-$_.png -s 35 35
         }
         Push-AppveyorArtifact configurations\$_\output\map-$_.png
     }

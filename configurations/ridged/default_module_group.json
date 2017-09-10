@@ -1,0 +1,22 @@
+{
+  "defaultoutputmodule":"OUTPUT",
+  "modules":{
+    "OUTPUT":{
+      "type":"Clamp",
+      "Bounds":[-1,1],
+      "SourceModule":"ridged_t"
+    },
+    "ridged_t":{
+      "type":"TranslatePoint",
+      "Translation":[-1.1,-2.2,-3.3],
+      "SourceModule":["ridged"]
+    },
+    "ridged":{
+      "type":"RidgedMulti",
+      "OctaveCount":6,
+      "Frequency":2.4,
+      "Lacunarity":2.4,
+      "NoiseQuality":"Standard"
+    }
+  }
+}
